@@ -53,14 +53,15 @@
             <template v-slot:items="props">
                 <td>{{ props.item.code }}</td>
                 <td class="text-xs-center">{{ props.item.title }}</td>
-                <td class="text-xs-center">{{ props.item.program.title }}</td>
+                <td class="text-xs-center">{{ props.item.program ? props.item.program.subsidiary.title : '' }}</td>
+                <td class="text-xs-center">{{ props.item.program ? props.item.program.title : '' }}</td>
                 <td class="text-xs-center">{{
                      props.item.users.map(function(developer){
                         return developer.full_name
                      }).join("\n")
                 }}</td>
                 <td class="text-xs-center">{{ props.item.status.title }}</td>
-                <td class="text-xs-center">{{ props.item.url }}</td>
+                <td class="text-xs-center"><a :href=props.item.url ><i class="nc-icon nc-paper-2"></i></a></td>
             </template>
         </v-data-table>
     </v-app>
@@ -90,6 +91,7 @@
                         value: 'code'
                     },
                     { text: 'Название', align: 'center', value: 'title', sortable: false},
+                    { text: 'Направление подготовки', align: 'center', value: 'program.subsidiary.title', sortable: false},
                     { text: 'ОПОП', align: 'center', value: 'program.title', sortable: false },
                     { text: 'Разработчики', align: 'center', value: 'user.name', sortable: false },
                     { text: 'Статус', align: 'center', value: 'status', sortable: false },

@@ -65,7 +65,7 @@
       logOut() {
         this.$store.dispatch('logOut');
         this.$router.push('/login');
-        this.localStorage.removeItem('token');
+        localStorage.removeItem('token');
       },
       capitalizeFirstLetter (string) {
         return string.charAt(0).toUpperCase() + string.slice(1)

@@ -1,11 +1,10 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import uuidv4 from 'uuid/v4'
 import dashboard from './modules/dashboard'
 import faculties from './modules/faculties'
 import search from './modules/search'
 import user from './modules/user'
-import createPersistedState from 'vuex-persistedstate'
+import documents from './modules/documents'
 
 Vue.use(Vuex);
 
@@ -51,6 +50,7 @@ export default new Vuex.Store({
         dashboard,
         faculties,
         search,
+        documents,
         user
     },
     strict: debug

@@ -4,10 +4,10 @@ import axios from "axios";
 // initial state
 const state = {
     docFlow: {
-        inDevelop: null,
-        inRefactoring: null,
-        accept: null,
-        all: null,
+        inDevelop: [],
+        inRefactoring: [],
+        accept: [],
+        all: [],
     },
     byFaculties: {
         faculties: [],
